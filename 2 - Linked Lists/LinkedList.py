@@ -4,6 +4,7 @@ class Node:
 
 	def __init__(self, d):
 		self.data = d
+		self.next = None
 
 	def appendToTail(self, d):
 		n = Node(d)
@@ -12,6 +13,13 @@ class Node:
 			cur = cur.next
 
 		cur.next = n
+
+	def appendNode(self, d):
+		cur = self
+		while cur.next != None:
+			cur = cur.next
+
+		cur.next = d
 
 	def printLL(self):
 		n = self
