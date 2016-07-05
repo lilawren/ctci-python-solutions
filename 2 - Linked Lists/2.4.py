@@ -11,7 +11,7 @@ def LLpartition(head, x):
 	if n.next == None:
 		return n
 
-	while n.next != None:
+	while n != None:
 		if int(n.data) < x: #lesser list
 			if lesser == None:
 				lesser = Node(n.data)
@@ -25,19 +25,6 @@ def LLpartition(head, x):
 			else:
 				greatereq.appendToTail(n.data)
 		n = n.next
-
-	if int(n.data) < x:  # lesser list
-		if lesser == None:
-			lesser = Node(n.data)
-			lesser.next = None
-		else:
-			lesser.appendToTail(n.data)
-	elif int(n.data) >= x:  # greater or equal to
-		if greatereq == None:
-			greatereq = Node(n.data)
-			greatereq.next = None
-		else:
-			greatereq.appendToTail(n.data)
 
 	lesser.appendNode(greatereq) #combine
 	return lesser

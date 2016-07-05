@@ -4,17 +4,13 @@ def removeDupes(head): #use set
 	n = head
 	prev = None
 	myset = set()
-	while n.next != None:
+	while n != None:
 		if n.data in myset: #found dupe
 			prev.next = n.next #remove dupe
 		else:
 			myset.add(n.data)
 			prev = n
 		n = n.next #move forward
-
-	#do for last element
-	if n.data in myset:  # found dupe
-		prev.next = None
 
 
 

@@ -7,24 +7,19 @@ def removeKth(head, k):
 	n = head
 	m = head
 	counter = 0
-	while m.next != None:
+	while m != None:
 		if counter == k+1:
 			n = n.next
 		else:
 			counter += 1
 		m = m.next
 
-	#last node
-	if counter == k+1:
-		n = n.next
-	m = m.next
-
 	#check if out of bounds
-	if counter + 1 < k:
+	if counter  < k:
 		return head
 
 	# check if head changed
-	if n == head and counter +1 == k:
+	if n == head and counter == k:
 		return head.next
 
 	#remove kth from last
@@ -39,5 +34,5 @@ head.appendToTail("1")
 head.appendToTail("4")
 
 head.printLL()
-head = removeKth(head, 4)
+head = removeKth(head, 3)
 head.printLL()

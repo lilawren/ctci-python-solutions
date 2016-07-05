@@ -3,19 +3,16 @@
 from LinkedList import Node
 
 def sumLL(h1, h2):
-    '''
     n = h1
     m = h2
     num_n = ""
     num_m = ""
-    while(n.next != None): #while not at end yet
+    while(n != None): #while not at end yet
         num_n = str(n.data) + num_n
         n = n.next
-    num_n = str(n.data) + num_n
-    while (m.next != None):  # while not at end yet
+    while (m != None):  # while not at end yet
         num_m = str(m.data) + num_m
         m = m.next
-    num_m = str(m.data) + num_m
 
     #construct the linked list
     numstr = str(int(num_n) + int(num_m))
@@ -30,20 +27,18 @@ def sumLL(h1, h2):
 
 
 
-follow up: if in forward order
+#follow up: if in forward order
 '''
     n = h1
     m = h2
     num_n = ""
     num_m = ""
-    while (n.next != None):  # while not at end yet
+    while (n != None):  # while not at end yet
         num_n =  num_n + str(n.data)
         n = n.next
-    num_n = num_n + str(n.data)
-    while (m.next != None):  # while not at end yet
+    while (m != None):  # while not at end yet
         num_m = num_m + str(m.data)
         m = m.next
-    num_m = num_m + str(m.data)
 
     # construct the linked list
     numstr = str(int(num_n) + int(num_m))
@@ -55,7 +50,7 @@ follow up: if in forward order
         head.appendToTail(numstr[i])
 
     return head
-
+'''
 
 n1 = Node(7)
 n1.appendToTail(1)

@@ -23,10 +23,9 @@ class Node:
 
 	def printLL(self):
 		n = self
-		while n.next != None:
+		while n != None:
 			print(n.data, end=",")
 			n = n.next
-		print(n.data) #print last node
 
 
 def deleteNode(head, d):
