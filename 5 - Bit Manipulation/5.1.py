@@ -9,20 +9,20 @@ def insertBits(N, M, i, j):
 	padding = '1' * len(str(N))
 
 	#mask = command.format(int('1' * len(str(M)),2))
-	mask = int('1' * len(str(M)),2)
+	mask = int('1' * len(str(M)), 2)
 	print(bin(mask))
 
 	mask = mask << int(i)
 	print("shift " + bin(mask))
 
-	mask = ~mask & int(padding,2) # pad the mask
+	mask = ~mask & int(padding, 2) # pad the mask
 	print("negate " + bin(mask))
 
 	cleared = int(N) & int(mask)
 	print("cleared " + bin(cleared))
 
 	#insert M, shift and or it
-	mask2 = int(str(M),2) << int(i)
+	mask2 = int(str(M), 2) << int(i)
 	print("mask to or with " + bin(mask2))
 	return bin(int(cleared) | int(mask2))
 
